@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Physics.gravity = new Vector3(0, -20f, 0);
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class CharacterController : MonoBehaviour
 
             if (currentSpeed < WalkSpeedMax)
             {
-                currentSpeed += 0.05f;
+                currentSpeed += 0.1f;
             }
         }
 
@@ -72,7 +72,7 @@ public class CharacterController : MonoBehaviour
 
 
 
-            float mouseX = Input.GetAxis("Mouse X");
+        float mouseX = Input.GetAxis("Mouse X");
         transform.Rotate(new Vector3(0, mouseX * rotateSpeed, 0));
         _targetRotationY = transform.eulerAngles.y;
     }
@@ -80,17 +80,20 @@ public class CharacterController : MonoBehaviour
     private void WalkForward()
     {
         Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotationY, 0.0f) * Vector3.forward;
-        rigibody.velocity = targetDirection.normalized * currentSpeed;
+        rigibody.velocity = new Vector3(targetDirection.normalized.x * currentSpeed, rigibody.velocity.y, targetDirection.normalized.z * currentSpeed);
+
     }
 
     private void WalkBack()
     {
         Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotationY, 0.0f) * Vector3.back;
-        rigibody.velocity = targetDirection.normalized * currentSpeed;
+        //rigibody.velocity = targetDirection.normalized * currentSpeed;
+        rigibody.velocity = new Vector3(targetDirection.normalized.x * currentSpeed, rigibody.velocity.y, targetDirection.normalized.z * currentSpeed);
     }
 
     private void StopMove()
     {
-        rigibody.velocity = Vector3.zero;
+        rigibody.velocity = new Vector3(0, rigibody.velocity.y, 0);
+       // rigibody.velocity = Vector3.zero;
     }
 }
