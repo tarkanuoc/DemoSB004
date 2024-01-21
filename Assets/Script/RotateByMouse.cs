@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class RotateByMouse : MonoBehaviour
+namespace Demo
 {
-    private void Update()
+    public class RotateByMouse : MonoBehaviour
     {
-        
+        private void Update()
+        {
+
+        }
     }
 }
