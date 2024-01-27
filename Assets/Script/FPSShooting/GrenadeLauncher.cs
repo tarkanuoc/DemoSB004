@@ -8,6 +8,7 @@ public class GrenadeLauncher : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Transform tfmFiringPos;
     [SerializeField] private AudioSource fireSound;
+    [SerializeField] private GunAmmo ammo;
     public float bulletSpeed;
 
     private void Update()
@@ -33,6 +34,6 @@ public class GrenadeLauncher : MonoBehaviour
         var bullet = Instantiate(bulletPrefab, tfmFiringPos.position, tfmFiringPos.rotation);
         var bulletRigibody = bullet.GetComponent<Rigidbody>();
         bulletRigibody.velocity = tfmFiringPos.forward * bulletSpeed;
-
+        ammo.LoadedAmmo--;
     }
 }
