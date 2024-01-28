@@ -6,21 +6,15 @@ public class AnimEventHandler : MonoBehaviour
 {
     public void SingleFireAmmoCounter()
     {
-
     }
-    
     public void AddSingleFireEffects()
     {
-
     }
     public void AltFireToIdle()
     {
-
     }
-
     public void PlayReloadPart1Sound()
     {
-
     }
 
     public void PlayReloadPart2Sound()
@@ -52,5 +46,7 @@ public class AnimEventHandler : MonoBehaviour
     {
 
     }
-
+    public void PlayFireSound()
+    {
+    }
 }
