@@ -97,4 +97,8 @@ public class GunAmmo : MonoBehaviour
     {
         reloadsounds[4].Play();
     }
+
+    public void OnGunSelected() => UpdateShootingLock();
+
+    private void UpdateShootingLock() => gun.enabled = _loadedAmmo > 0;
 }

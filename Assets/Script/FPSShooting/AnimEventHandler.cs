@@ -49,4 +49,14 @@ public class AnimEventHandler : MonoBehaviour
     public void PlayFireSound()
     {
     }
+    public void PlayRetrieveSound()
+    {
+
+    }
+    public void DisableSelectAnim()
+    {
+
+    }
+    
 }
+
