@@ -7,7 +7,7 @@ public class GunAmmo : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     public int magSize;
-    public GrenadeLauncher gun;
+    public Shooting gun;
 
     [SerializeField] private AudioSource[] reloadsounds;
 

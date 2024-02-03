@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrenadeLauncher : MonoBehaviour
+public class GrenadeLauncher : Shooting
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Animator animator;
