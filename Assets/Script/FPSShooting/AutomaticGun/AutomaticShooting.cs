@@ -12,6 +12,7 @@ public class AutomaticShooting : Shooting
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private UnityEvent onShoot;
     [SerializeField] private GunAmmo ammo;
+    [SerializeField] private GunRaycaster gunRaycaster;
 
     public int rpm;
     public AudioSource shootSound;
@@ -46,7 +47,7 @@ public class AutomaticShooting : Shooting
     {
         anim.Play("Shoot");
         shootSound.Play();
-        PerformRaycasting();
+        gunRaycaster.PerformRaycasting();
 
        // var randomY = Random.Range(10, 100f);
 
@@ -56,13 +57,5 @@ public class AutomaticShooting : Shooting
         onShoot.Invoke();
     }
 
-    private void PerformRaycasting()
-    {
-        Ray aimingRay = new Ray(aimingCamera.transform.position, -transform.forward);
-        if (Physics.Raycast(aimingRay, out RaycastHit hitinfo, 1000f, layerMask))
-        {
-            var effectRotation = Quaternion.LookRotation(hitinfo.normal);
-            Instantiate(hitMarkerPrefab, hitinfo.point, effectRotation);
-        }
-    }
+   
 }
