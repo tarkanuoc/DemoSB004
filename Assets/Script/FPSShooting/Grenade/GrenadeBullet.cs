@@ -7,6 +7,7 @@ public class GrenadeBullet : MonoBehaviour
     [SerializeField] private GameObject explosionPrefab;
     public float exposionForce;
     public float exposionRadius;
+    public int damage;
 
 
     private void OnCollisionEnter(Collision collision)
@@ -14,6 +15,15 @@ public class GrenadeBullet : MonoBehaviour
         Instantiate(explosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
         BlowObjects();
+    }
+
+    private void DeliverDamage(Collider victim)
+    {
+        Health health = victim.GetComponent<Health>();
+        if (health != null)
+        {
+            health.TakeDamage(damage);
+        }
     }
 
     private void BlowObjects()
@@ -25,6 +35,7 @@ public class GrenadeBullet : MonoBehaviour
             var rigibody = affectedObjects[i].attachedRigidbody;
             if (rigibody != null)
             {
+                DeliverDamage(affectedObjects[i]);
                 rigibody.AddExplosionForce(exposionForce, transform.position, exposionRadius, 1, ForceMode.Impulse);
             }
         }
