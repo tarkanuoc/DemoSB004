@@ -8577,6 +8577,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4116259839626626, guid: c21252cbe01eccd4a967b728d0b09f5a, type: 3}
   m_PrefabInstance: {fileID: 943646810}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &953245696 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7537417665459280382, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+  m_PrefabInstance: {fileID: 1628318512}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &953245699 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 953245699, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+  m_PrefabInstance: {fileID: 1628318512}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a2debbe156e4c4bbe0e914dc12cb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &967856312
 GameObject:
   m_ObjectHideFlags: 0
@@ -13626,6 +13642,82 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 64535194, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284339229, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 338926965, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 594647710, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 953245699}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnableRagdoll
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RagdollSwitcher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245698, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 953245699, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 953245696}
+    - target: {fileID: 1024368886, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1411417393, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1436515600, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1475500888, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1573986274, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1685394569, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134173290, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1998371697940912222, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
       propertyPath: m_Name
       value: Zombie2
@@ -13673,6 +13765,10 @@ PrefabInstance:
     - target: {fileID: 3305920991726709325, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7537417665459280382, guid: d58be77cba3adf54cb14b15052b86514, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58be77cba3adf54cb14b15052b86514, type: 3}

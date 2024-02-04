@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RagdollSwitcher : MonoBehaviour
 {
+    [SerializeField] private Animator anim;
     public Rigidbody[] rigids;
     [ContextMenu("Retrieve Rigibodies")]
     private void RetrieveRigibodies()
@@ -28,6 +29,26 @@ public class RagdollSwitcher : MonoBehaviour
         for (int i = 0; i < colls.Length; i++)
         {
             DestroyImmediate(colls[i]);
+        }
+    }
+
+    [ContextMenu("Enable Ragdoll")]
+    public void EnableRagdoll()
+    {
+        SetRagdoll(true);
+    }
+    [ContextMenu("Disable Ragdoll")]
+    public void DisableRagdoll()
+    {
+        SetRagdoll(false);
+    }
+
+    private void SetRagdoll(bool ragdollEnable)
+    {
+        anim.enabled = !ragdollEnable;
+        for (int i = 0; i < rigids.Length; i++)
+        {
+            rigids[i].isKinematic = !ragdollEnable;
         }
     }
 }

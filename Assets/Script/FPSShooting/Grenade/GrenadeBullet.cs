@@ -19,7 +19,7 @@ public class GrenadeBullet : MonoBehaviour
 
     private void DeliverDamage(Collider victim)
     {
-        Health health = victim.GetComponent<Health>();
+        Health health = victim.GetComponentInParent<Health>();
         if (health != null)
         {
             health.TakeDamage(damage);
