@@ -31,7 +31,10 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        anim.SetTrigger("Die");
+        if (anim != null)
+        {
+            anim.SetTrigger("Die");
+        }
         onDie.Invoke();
     }
 
