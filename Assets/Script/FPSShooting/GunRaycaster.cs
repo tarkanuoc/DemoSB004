@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunRaycaster : MonoBehaviour
 {
     private GameObject hitMarkerPrefab;
-    [SerializeField] private HitEffectManager hitEffectManager;
+  //  [SerializeField] private HitEffectManager hitEffectManager;
     [SerializeField] private Camera aimingCamera;
     [SerializeField] private LayerMask layerMask;
     public int damage;
@@ -20,7 +20,8 @@ public class GunRaycaster : MonoBehaviour
 
             if (hitSurface != null)
             {
-                hitMarkerPrefab = hitEffectManager.effectMap[(int)hitSurface.surfaceType].effectPrefab;
+                //hitMarkerPrefab = hitEffectManager.effectMap[(int)hitSurface.surfaceType].effectPrefab;
+                hitMarkerPrefab = HitEffectManager.Instance.effectMap[(int)hitSurface.surfaceType].effectPrefab;
             }
             Instantiate(hitMarkerPrefab, hitinfo.point, effectRotation);
             DeliverDamage(hitinfo);

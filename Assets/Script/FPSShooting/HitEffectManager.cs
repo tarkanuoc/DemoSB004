@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitEffectManager : MonoBehaviour
+public class HitEffectManager : Singleton<HitEffectManager>
 {
     public HitEffectMapper[] effectMap;
 }

@@ -51,6 +51,6 @@ public class ZombieMovement : MonoBehaviour
         {
             agent.SetDestination(playerFoot.position);
         }
-        
+       
     }
 }
