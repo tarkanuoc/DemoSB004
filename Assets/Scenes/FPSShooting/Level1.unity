@@ -10342,7 +10342,7 @@ MonoBehaviour:
   playerFoot: {fileID: 344618891}
   anim: {fileID: 953245696}
   agent: {fileID: 953245702}
-  reachingRadius: 2
+  reachingRadius: 1.5
   onDestinationReached:
     m_PersistentCalls:
       m_Calls:

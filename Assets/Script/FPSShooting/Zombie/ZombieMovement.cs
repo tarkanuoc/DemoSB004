@@ -20,7 +20,8 @@ public class ZombieMovement : MonoBehaviour
         get => _isMovingValue;
         private set
         {
-            if (_isMovingValue == value) return;
+            if (_isMovingValue == value)
+                return;
             _isMovingValue = value;
             OnIsMovingValueChanged();
         }
@@ -51,7 +52,9 @@ public class ZombieMovement : MonoBehaviour
         {
             agent.SetDestination(playerFoot.position);
         }
-       
+        
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, playerFoot.parent.transform.eulerAngles.y + 180f, transform.eulerAngles.z);
+
     }
 
     public void OnZombieDie()
