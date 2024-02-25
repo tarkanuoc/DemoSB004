@@ -6,7 +6,7 @@ using DG.Tweening;
 
 public class AutoFade : MonoBehaviour
 {
-    [SerializeField] private Image img;
+    [SerializeField] private CanvasGroup group;
     public float showDuration;
     public float hideDuration;
 
@@ -14,8 +14,9 @@ public class AutoFade : MonoBehaviour
     {
         
         gameObject.SetActive(true);
+                
         
-        img.DOFade(1f, 1f).OnComplete(() =>
+        group.DOFade(1f, 1f).OnComplete(() =>
         {
             DOVirtual.DelayedCall(showDuration, () =>
             {
@@ -26,7 +27,7 @@ public class AutoFade : MonoBehaviour
 
     public void Hide()
     {
-        img.DOFade(0, 1f).OnComplete(() => {
+        group.DOFade(0, 1f).OnComplete(() => {
             gameObject.SetActive(false);
         });
     }
