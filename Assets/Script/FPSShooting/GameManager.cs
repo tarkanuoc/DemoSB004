@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public void OnGameover()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         PanelGameOver.SetActive(true);
     }
 }

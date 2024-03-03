@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/FPSShooting/MainMenu.unity
+    guid: f3a84616b238b4a4398b0cfb2e8aaa73
+  - enabled: 1
+    path: Assets/Scenes/FPSShooting/Level1.unity
+    guid: d16629127c6907446aa17971a5f32345
   m_configObjects: {}

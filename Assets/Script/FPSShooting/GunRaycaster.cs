@@ -20,7 +20,6 @@ public class GunRaycaster : MonoBehaviour
 
             if (hitSurface != null)
             {
-                //hitMarkerPrefab = hitEffectManager.effectMap[(int)hitSurface.surfaceType].effectPrefab;
                 hitMarkerPrefab = HitEffectManager.Instance.effectMap[(int)hitSurface.surfaceType].effectPrefab;
             }
             Instantiate(hitMarkerPrefab, hitinfo.point, effectRotation);
