@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class ZombieSpawner : MonoBehaviour
@@ -7,11 +8,12 @@ public class ZombieSpawner : MonoBehaviour
     [SerializeField] private GameObject zombiePrefab;
     public int spawnQuantity;
     public float spawnInterval;
-
+    public float spawnRadius = 10f;
+    public Color color;
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, 0.27f);
+        Handles.color = color;
+        Handles.DrawSolidDisc(transform.position, Vector3.up, spawnRadius);
     }
 
     private void Start()
@@ -30,7 +32,9 @@ public class ZombieSpawner : MonoBehaviour
 
     private void SpawnZombie()
     {
-        Instantiate(zombiePrefab, transform.position, transform.rotation);
+        Vector3 spawnPos = Random.insideUnitCircle * spawnRadius;
+
+        Instantiate(zombiePrefab, transform.position + spawnPos, transform.rotation);
         spawnQuantity--;
     }
 
