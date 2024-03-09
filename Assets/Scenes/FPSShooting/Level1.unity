@@ -16582,7 +16582,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 8682866883714076316, guid: 138f70816ce127449bf88d2fc8156457, type: 3}
   spawnQuantity: 10
-  spawnInterval: 1
+  spawnInterval: 2
+  spawnRadius: 3
+  color: {r: 1, g: 0, b: 0, a: 0.11372549}
 --- !u!4 &1726995911
 Transform:
   m_ObjectHideFlags: 0
