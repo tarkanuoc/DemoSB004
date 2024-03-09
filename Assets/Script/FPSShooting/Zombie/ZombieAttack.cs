@@ -5,8 +5,14 @@ using UnityEngine;
 public class ZombieAttack : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private Health playerHealth;
+    
+    private Health playerHealth;
     public int damage;
+
+    private void Start()
+    {
+        playerHealth = Player.Instance.HealthPlayer;
+    }
 
     public void StartAttack()
     {
@@ -20,15 +26,18 @@ public class ZombieAttack : MonoBehaviour
 
     public void OnAttack(int index)
     {
-        playerHealth.TakeDamage(damage);
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
 
-        if (index == 0)
-        {
-            PlayerUI.Instance.ShowLeftScratch();
-        }
-        else
-        {
-            PlayerUI.Instance.ShowRightScratch();
+            if (index == 0)
+            {
+                PlayerUI.Instance.ShowLeftScratch();
+            }
+            else
+            {
+                PlayerUI.Instance.ShowRightScratch();
+            }
         }
     }
 }

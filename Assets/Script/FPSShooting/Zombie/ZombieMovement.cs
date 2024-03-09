@@ -6,13 +6,13 @@ using UnityEngine.Events;
 
 public class ZombieMovement : MonoBehaviour
 {
-    [SerializeField] private Transform playerFoot;
     [SerializeField] private Animator anim;
     [SerializeField] private NavMeshAgent agent;
     public float reachingRadius;
     public UnityEvent onDestinationReached;
     public UnityEvent onStartMoving;
 
+    private Transform playerFoot;
     private bool _isMovingValue;
 
     public bool IsMoving
@@ -41,20 +41,27 @@ public class ZombieMovement : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        playerFoot = Player.Instance.PlayerFoot;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        var distance = Vector3.Distance(transform.position, playerFoot.position);
-        IsMoving = distance > reachingRadius;
-
-        if (IsMoving)
+        if (playerFoot != null)
         {
-            agent.SetDestination(playerFoot.position);
-        }
-        
-        transform.eulerAngles = new Vector3(transform.eulerAngles.x, playerFoot.parent.transform.eulerAngles.y + 180f, transform.eulerAngles.z);
+            var distance = Vector3.Distance(transform.position, playerFoot.position);
+            IsMoving = distance > reachingRadius;
 
+            if (IsMoving)
+            {
+                agent.SetDestination(playerFoot.position);
+            }
+
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, playerFoot.parent.transform.eulerAngles.y + 180f, transform.eulerAngles.z);
+        }
     }
 
     public void OnZombieDie()
