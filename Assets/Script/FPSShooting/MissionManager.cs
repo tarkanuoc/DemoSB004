@@ -7,8 +7,11 @@ public class MissionManager : Singleton<MissionManager>
 {
     [SerializeField] private MissionSO missionSO;
     [SerializeField] private TextMeshProUGUI textMission;
+    [SerializeField] private Gate exitDoor;
+
     private int requiredKill;
     private int currentKill;
+    private bool isPlayerExit;
 
     private void Start()
     {
@@ -19,7 +22,8 @@ public class MissionManager : Singleton<MissionManager>
     IEnumerator VerifyMissions()
     {
         yield return VerifyZombieKill();
-        yield return new WaitForSeconds(3f);
+        yield return VerifyPlayerExit();
+       // yield return new WaitForSeconds(3f);
         GameManager.Instance.OnMissionCompleted();
     }
 
@@ -28,6 +32,14 @@ public class MissionManager : Singleton<MissionManager>
         currentKill = 0;
         textMission.text = $"Kill {requiredKill} zombie" + $" - Current Kill : {currentKill}";
         yield return new WaitUntil(() => IsCompletedMission());
+    }
+
+    private IEnumerator VerifyPlayerExit()
+    {
+        textMission.text = $"Find Exit Door";
+        exitDoor.onPlayerEnter.AddListener(OnPlayerExit);
+        yield return new WaitUntil(() => isPlayerExit);
+        exitDoor.onPlayerEnter.RemoveListener(OnPlayerExit);
     }
 
     public void OnZombieKilled()
@@ -49,4 +61,14 @@ public class MissionManager : Singleton<MissionManager>
         return currentKill >= requiredKill;
     }
 
+    //bool IsPlayerExit()
+    //{
+    //    float distance = Vector3.Distance(Player.Instance.PlayerFoot.position, exitDoor.position);
+    //    return distance < 1f;
+    //}
+
+    private void OnPlayerExit()
+    {
+        isPlayerExit = true;
+    }
 }
