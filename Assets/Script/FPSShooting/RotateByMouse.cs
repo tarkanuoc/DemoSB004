@@ -9,6 +9,9 @@ public class RotateByMouse : MonoBehaviour
     public float minPitch;
     public float maxPitch;
 
+    public float minPitchZoom;
+    public float maxPitchZoom;
+
     private float pitch;
 
     private void Start()
@@ -35,7 +38,16 @@ public class RotateByMouse : MonoBehaviour
     {
         float mouseY = Input.GetAxis("Mouse Y");
         float deltaPitch = -mouseY * anglePerSecond;
-        pitch = Mathf.Clamp(pitch + deltaPitch, minPitch, maxPitch);
+
+        if (GameManager.Instance.IsZoomMode)
+        {
+            pitch = Mathf.Clamp(pitch + deltaPitch, minPitchZoom, maxPitchZoom);
+        }
+        else
+        {
+            pitch = Mathf.Clamp(pitch + deltaPitch, minPitch, maxPitch);
+        }
+        
         cameraHolder.localEulerAngles = new Vector3(pitch, 0, 0);
     }
 

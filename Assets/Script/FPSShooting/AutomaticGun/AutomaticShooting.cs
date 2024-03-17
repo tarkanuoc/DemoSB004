@@ -32,6 +32,23 @@ public class AutomaticShooting : Shooting
         {
             UpdateFiring();
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            GameManager.Instance.CamZoom.Priority = 10;
+            GameManager.Instance.IsZoomMode = true;
+        }
+        else
+        {
+            GameManager.Instance.CamZoom.Priority = 0;
+            GameManager.Instance.IsZoomMode = false;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            GameManager.Instance.CamZoom.Priority = 0;
+            GameManager.Instance.IsZoomMode = false;
+        }
     }
 
     private void UpdateFiring()
