@@ -101,6 +101,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1441,16 +1465,16 @@ TextureImporter:
       GUI_6: 1070498570
       GUI_45: 2023321687
       GUI_16: 1666571744
+      GUI_58: 1346209566
       GUI_7: 745228693
-      GUI_8: -579095895
       GUI_10: 1858499245
-      GUI_52: -904297324
+      GUI_8: -579095895
       GUI_31: -1958848184
       GUI_27: 722597809
       GUI_39: -1172425451
       GUI_28: 1355872618
       GUI_5: 1358456371
-      GUI_58: 1346209566
+      GUI_52: -904297324
       GUI_0: 301603436
       GUI_61: -1779618441
       GUI_60: 946050195
