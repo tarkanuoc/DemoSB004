@@ -12,8 +12,17 @@ public class ZombieMovement : MonoBehaviour
     public UnityEvent onDestinationReached;
     public UnityEvent onStartMoving;
 
-    private Transform playerFoot;
+    private Transform _target;
     private bool _isMovingValue;
+
+    public Transform ZombieTargetMove
+    {
+        get => _target;
+        set
+        {
+            _target = value;
+        }
+    }
 
     public bool IsMoving
     {
@@ -41,26 +50,19 @@ public class ZombieMovement : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void UpdateMovement()
     {
-        playerFoot = Player.Instance.PlayerFoot;
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerFoot != null)
+        if (_target != null)
         {
-            var distance = Vector3.Distance(transform.position, playerFoot.position);
+            var distance = Vector3.Distance(transform.position, _target.position);
             IsMoving = distance > reachingRadius;
 
             if (IsMoving)
             {
-                agent.SetDestination(playerFoot.position);
+                agent.SetDestination(_target.position);
             }
 
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, playerFoot.parent.transform.eulerAngles.y + 180f, transform.eulerAngles.z);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, _target.eulerAngles.y + 180f, transform.eulerAngles.z);
         }
     }
 

@@ -10,6 +10,10 @@ public class ZombieSpawner : MonoBehaviour
     public float spawnInterval;
     public float spawnRadius = 10f;
     public Color color;
+    public float traceDistance = 20f;
+
+    private List<ZombieAI> _lstZombieAI = new List<ZombieAI>();
+
     private void OnDrawGizmos()
     {
         Handles.color = color;
@@ -34,9 +38,26 @@ public class ZombieSpawner : MonoBehaviour
     {
         Vector3 spawnPos = Random.insideUnitCircle * spawnRadius;
 
-        Instantiate(zombiePrefab, transform.position + spawnPos, transform.rotation);
+        var zombie = Instantiate(zombiePrefab, transform.position + spawnPos, transform.rotation);
+        var zombieAI = zombie.GetComponent<ZombieAI>();
+        zombieAI.SpawnPos = transform;
+        _lstZombieAI.Add(zombieAI);
         spawnQuantity--;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("=========== Player In");
+            for (int i = 0; i < _lstZombieAI.Count; i++)
+            {
+                //if (Vector3.Distance(other.transform.position, _lstZombieAI[i].transform.position) <= traceDistance)
+                {
+                    _lstZombieAI[i].TracePlayer();
+                }
+            }
+        }
+    }
 
 }

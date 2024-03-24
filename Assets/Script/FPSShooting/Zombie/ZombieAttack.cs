@@ -17,11 +17,13 @@ public class ZombieAttack : MonoBehaviour
     public void StartAttack()
     {
         anim.SetBool("IsAttacking", true);
+        anim.SetBool("IsWalking", false);
     }
 
     public void StopAttack()
     {
         anim.SetBool("IsAttacking", false);
+        anim.SetBool("IsWalking", true);
     }
 
     public void OnAttack(int index)
