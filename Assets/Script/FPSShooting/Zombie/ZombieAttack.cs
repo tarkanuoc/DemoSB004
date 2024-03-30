@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class ZombieAttack : MonoBehaviour
 {
+    [SerializeField] private ZombieSO ZombieSO;
     [SerializeField] private Animator anim;
     
     private Health playerHealth;
-    public int damage;
+    
 
     private void Start()
     {
@@ -30,7 +31,7 @@ public class ZombieAttack : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.TakeDamage(damage);
+            playerHealth.TakeDamage(ZombieSO.Damage);
 
             if (index == 0)
             {

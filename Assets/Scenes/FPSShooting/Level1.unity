@@ -19531,7 +19531,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: -1.45}
 --- !u!54 &1573729803
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21197,7 +21197,7 @@ GameObject:
   - component: {fileID: 1726995910}
   - component: {fileID: 1726995913}
   - component: {fileID: 1726995912}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ZombieSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -26,7 +26,7 @@ public class Health : MonoBehaviour
 
     private bool IsDead => _healthPoint <= 0;
 
-    private void Start()
+    protected virtual void Start()
     {
         _healthPoint = MaxHP;
     }
@@ -35,7 +35,7 @@ public class Health : MonoBehaviour
     {
         if (IsDead) return;
         HealthPoint -= damage;
-      
+        Debug.Log("========== zombie attacked !");
         if (IsDead)
         {
             Die();
